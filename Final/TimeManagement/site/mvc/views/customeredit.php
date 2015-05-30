@@ -51,12 +51,12 @@
             
             
              echo '<table border="1" cellpadding="5"><tr><th>Customer Name</th><th>Active</th><th></th><th></th></tr>';
-             foreach ($scope->view['EmailTypes'] as $value) {
+             foreach ($scope->view['Customers'] as $value) {
                 echo '<tr>';
-                echo '<td>', $value->getEmailtype(),'</td>';
+                echo '<td>', $value->getCustomerName(),'</td>';
                 echo '<td>', ( $value->getActive() == 1 ? 'Yes' : 'No') ,'</td>';
-                echo '<td><form action="#" method="post"><input type="hidden"  name="emailtypeid" value="',$value->getEmailtypeid(),'" /><input type="hidden" name="action" value="edit" /><input type="submit" value="EDIT" /> </form></td>';
-                echo '<td><form action="#" method="post"><input type="hidden"  name="emailtypeid" value="',$value->getEmailtypeid(),'" /><input type="hidden" name="action" value="delete" /><input type="submit" value="DELETE" /> </form></td>';
+                echo '<td><form action="#" method="post"><input type="hidden"  name="customerid" value="',$value->getCustomerID(),'" /><input type="hidden" name="action" value="edit" /><input type="submit" value="EDIT" /> </form></td>';
+                echo '<td><form action="#" method="post"><input type="hidden"  name="customerid" value="',$value->getCustomerID(),'" /><input type="hidden" name="action" value="delete" /><input type="submit" value="DELETE" /> </form></td>';
                 echo '</tr>' ;
             }
             echo '</table>';
