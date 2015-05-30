@@ -188,7 +188,7 @@ use Exception;
         $_validator = new Validator();
         
         $_customerModel = new CustomerModel;
-        //$_emailmodel = new EmailModel();
+        $_projectmodel = new EmailModel();
         
         $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customerModel, $_log);
        // $_emailDAO = new EmailDAO($_pdo->getDB(), $_emailmodel, $_log);

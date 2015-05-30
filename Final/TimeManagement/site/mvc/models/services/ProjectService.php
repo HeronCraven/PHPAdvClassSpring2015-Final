@@ -11,10 +11,10 @@ use App\models\interfaces\IDAO;
 use App\models\interfaces\IService;
 use App\models\interfaces\IModel;
 
-class EmailService implements IService {
+class ProjectService implements IService {
     
-    protected $emailDAO;
-    protected $emailTypeService;
+    protected $projectDAO;
+    protected $customerService;
     protected $validator;
     protected $model;
                 
@@ -26,20 +26,20 @@ class EmailService implements IService {
         $this->validator = $validator;
     }                
      
-    function getEmailDAO() {
-        return $this->emailDAO;
+    function getProjectDAO() {
+        return $this->projectDAO;
     }
 
-    function setEmailDAO(IDAO $DAO) {
-        $this->emailDAO = $DAO;
+    function setProjectDAO(IDAO $DAO) {
+        $this->projectDAO = $DAO;
     }
     
-    function getEmailTypeService() {
-        return $this->emailTypeService;
+    function getCustomerService() {
+        return $this->CustomerService;
     }
 
-    function setEmailTypeService(IService $service) {
-        $this->emailTypeService = $service;
+    function setCustomerService(IService $service) {
+        $this->customerService = $service;
     }
     
     
@@ -51,28 +51,28 @@ class EmailService implements IService {
         $this->model = $model;
     }
 
-        public function __construct( IDAO $emailDAO, IService $emailTypeService, IService $validator, IModel $model  ) {
-        $this->setEmailDAO($emailDAO);
-        $this->setEmailTypeService($emailTypeService);
+        public function __construct( IDAO $projectDAO, IService $cutomerService, IService $validator, IModel $model  ) {
+        $this->setProjectDAO($projectDAO);
+        $this->setCustomerService($cutomerService);
         $this->setValidator($validator);
         $this->setModel($model);
     }
     
     
-    public function getAllEmailTypes() {       
-        return $this->getEmailTypeService()->getAllRows();   
+    public function getAllCustomers() {       
+        return $this->getCustomerService()->getAllRows();   
         
     }
     
-     public function getAllEmails() {       
-        return $this->getEmailDAO()->getAllRows();   
+     public function getAllProjects() {       
+        return $this->getProjectDAO()->getAllRows();   
         
     }
     
     public function create(IModel $model) {
         
         if ( count($this->validate($model)) === 0 ) {
-            return $this->getEmailDAO()->create($model);
+            return $this->getProjectDAO()->create($model);
         }
         return false;
     }
@@ -81,10 +81,13 @@ class EmailService implements IService {
     public function validate( IModel $model ) {
         $errors = array();
         
-        if ( !$this->getEmailTypeService()->idExist($model->getEmailtypeid()) ) {
+        /*
+        if ( !$this->getCustomerService()->idExist($model->getCustomerID()) ) {
             $errors[] = 'Email Type is invalid';
         }
-       
+       */
+        
+        /*
         if ( !$this->getValidator()->emailIsValid($model->getEmail()) ) {
             $errors[] = 'Email is invalid';
         }
@@ -92,6 +95,8 @@ class EmailService implements IService {
         if ( !$this->getValidator()->activeIsValid($model->getActive()) ) {
             $errors[] = 'Email active is invalid';
         }
+         * *
+         */
        
         
         return $errors;
@@ -99,24 +104,24 @@ class EmailService implements IService {
     
     
     public function read($id) {
-        return $this->getEmailDAO()->read($id);
+        return $this->getProjectDAO()->read($id);
     }
     
     public function delete($id) {
-        return $this->getEmailDAO()->delete($id);
+        return $this->getProjectDAO()->delete($id);
     }
     
     
      public function update(IModel $model) {
         
         if ( count($this->validate($model)) === 0 ) {
-            return $this->getEmailDAO()->update($model);
+            return $this->getProjectDAO()->update($model);
         }
         return false;
     }
     
     
-     public function getNewEmailModel() {
+     public function getNewProjectModel() {
         return clone $this->getModel();
     }
     

@@ -7,7 +7,7 @@
  */
 
 /**
- * Description of EmailtypeController
+ * Description of CustomertypeController
  *
  * @author KHERON
  */

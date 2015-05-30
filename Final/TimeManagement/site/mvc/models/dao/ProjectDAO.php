@@ -1,6 +1,6 @@
 <?php
 /**
- * Description of EmailDAO
+ * Description of ProjectDAO
  *
  * @author kheron
  */
@@ -13,7 +13,7 @@ use App\models\interfaces\ILogging;
 use \PDO;
 
 
-class EmailDAO extends BaseDAO implements IDAO {
+class ProjectDAO extends BaseDAO implements IDAO {
         
      public function __construct( PDO $db, IModel $model, ILogging $log ) {        
         $this->setDB($db);
@@ -22,12 +22,12 @@ class EmailDAO extends BaseDAO implements IDAO {
     }
     
     
-    public function idExisit($id) {
+    public function idExist($id) {
                 
         $db = $this->getDB();
-        $stmt = $db->prepare("SELECT emailid FROM email WHERE emailid = :emailid");
+        $stmt = $db->prepare("SELECT projectid FROM projects WHERE projectid = :projectid");
          
-        if ( $stmt->execute(array(':emailid' => $id)) && $stmt->rowCount() > 0 ) {
+        if ( $stmt->execute(array(':projectid' => $id)) && $stmt->rowCount() > 0 ) {
             return true;
         }
          return false;
@@ -39,10 +39,10 @@ class EmailDAO extends BaseDAO implements IDAO {
          
          $db = $this->getDB();
          
-         $stmt = $db->prepare("SELECT email.emailid, email.email, email.emailtypeid, emailtype.emailtype, emailtype.active as emailtypeactive, email.logged, email.lastupdated, email.active"
-                 . " FROM email LEFT JOIN emailtype on email.emailtypeid = emailtype.emailtypeid WHERE emailid = :emailid");
+         $stmt = $db->prepare("SELECT projects.projectid, projects.projectname, projects.projecthours, projects.customerid, customers.customername, customers.active as customeractive, projects.logged, projects.lastupdated, projects.active"
+                 . " FROM projects LEFT JOIN customers on customers.customerid = customers.customerid WHERE projectid = :projectid");
          
-        if ( $stmt->execute(array(':emailid' => $id)) && $stmt->rowCount() > 0 ) {
+        if ( $stmt->execute(array(':projectid' => $id)) && $stmt->rowCount() > 0 ) {
              $results = $stmt->fetch(PDO::FETCH_ASSOC);
              $model->map($results);
         }
@@ -57,14 +57,15 @@ class EmailDAO extends BaseDAO implements IDAO {
                  
          $db = $this->getDB();
          
-         $binds = array( ":email" => $model->getEmail(),
+         $binds = array( ":projectname" => $model->getProjectName(),
+                         ":projecthours" => $model->getProjectHours(),
                          ":active" => $model->getActive(),
-                         ":emailtypeid" => $model->getEmailtypeid()             
+                         ":customerid" => $model->getCustomerID()             
                     );
                          
-         if ( !$this->idExisit($model->getEmailid()) ) {
+         if ( !$this->idExist($model->getProjectID()) ) {
              
-             $stmt = $db->prepare("INSERT INTO email SET email = :email, emailtypeid = :emailtypeid, active = :active, logged = now(), lastupdated = now()");
+             $stmt = $db->prepare("INSERT INTO projects SET projectname = :projectname, projecthours = :projecthours, customerid = :customerid, active = :active, logged = now(), lastupdated = now()");
              
              if ( $stmt->execute($binds) && $stmt->rowCount() > 0 ) {
                 return true;
@@ -80,16 +81,16 @@ class EmailDAO extends BaseDAO implements IDAO {
                  
          $db = $this->getDB();
          
-        $binds = array( ":email" => $model->getEmail(),
-                        ":active" => $model->getActive(),
-                        ":emailtypeid" => $model->getEmailtypeid(),
-                        ":emailid" => $model->getEmailid()
+        $binds = array( ":projectname" => $model->getProjectName(),
+                         ":projecthours" => $model->getProjectHours(),
+                         ":active" => $model->getActive(),
+                         ":customerid" => $model->getCustomerID()             
                     );
          
                 
-         if ( $this->idExisit($model->getEmailid()) ) {
+         if ( $this->idExist($model->getProjectID()) ) {
             
-             $stmt = $db->prepare("UPDATE email SET email = :email, emailtypeid = :emailtypeid,  active = :active, lastupdated = now() WHERE emailid = :emailid");
+             $stmt = $db->prepare("UPDATE projects SET projectname = :projectname, projecthours = :projecthours, customerid = :customerid, active = :active, lastupdated = now() WHERE projectid = :projectid");
          
              if ( $stmt->execute($binds) && $stmt->rowCount() > 0 ) {
                 return true;
@@ -106,9 +107,9 @@ class EmailDAO extends BaseDAO implements IDAO {
     public function delete($id) {
           
         $db = $this->getDB();         
-        $stmt = $db->prepare("Delete FROM email WHERE emailid = :emailid");
+        $stmt = $db->prepare("Delete FROM projects WHERE projectid = :projectid");
 
-        if ( $stmt->execute(array(':emailid' => $id)) && $stmt->rowCount() > 0 ) {
+        if ( $stmt->execute(array(':projectid' => $id)) && $stmt->rowCount() > 0 ) {
             return true;
         } else {
             $error = implode(",", $db->errorInfo());
@@ -122,8 +123,8 @@ class EmailDAO extends BaseDAO implements IDAO {
        $db = $this->getDB();
        $values = array();
        
-        $stmt = $db->prepare("SELECT email.emailid, email.email, email.emailtypeid, emailtype.emailtype, emailtype.active as emailtypeactive, email.logged, email.lastupdated, email.active"
-                 . " FROM email LEFT JOIN emailtype on email.emailtypeid = emailtype.emailtypeid");
+       $stmt = $db->prepare("SELECT projects.projectid, projects.projectname, projects.projecthours, projects.customerid, customers.customername, customers.active as customeractive, projects.logged, projects.lastupdated, projects.active"
+                 . " FROM projects LEFT JOIN customers on customers.customerid = customers.customerid");
         
         if ( $stmt->execute() && $stmt->rowCount() > 0 ) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
