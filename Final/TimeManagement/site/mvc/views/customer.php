@@ -63,7 +63,7 @@ and open the template in the editor.
             
             
              echo '<table border="1" cellpadding="5"><tr><th>Email Type</th><th>Active</th><th></th><th></th><th></th></tr>';
-             foreach ($scope->view['EmailTypes'] as $value) {
+             foreach ($scope->view['Customers'] as $value) {
                 echo '<tr>';
                 echo '<td>', $value->getCustomerName(),'</td>';
                 echo '<td>', $value->getDescription(),'</td>';

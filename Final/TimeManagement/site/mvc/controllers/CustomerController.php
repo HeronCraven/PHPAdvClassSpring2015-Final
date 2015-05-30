@@ -29,7 +29,7 @@ class CustomerController extends BaseController implements IController {
                 
         $this->data['model'] = $this->service->getNewCustomerModel();
         $this->data['model']->reset();
-        $viewPage = 'customername';
+        $viewPage = 'customer';
         
         
         if ( $scope->util->isPostRequest() ) {

@@ -26,10 +26,10 @@
         
          <h3>Edit Customer</h3>
         <form action="#" method="post">
-            <label>Email Type:</label> 
-            <input type="text" name="emailtype" value="<?php echo $emailType; ?>" placeholder="" />
+            <label>Customer Name:</label> 
+            <input type="text" name="customername" value="<?php echo $customerName; ?>" placeholder="" />
             <input type="number" max="1" min="0" name="Active" value="<?php echo $active; ?>" />
-            <input type="hidden"  name="emailtypeid" value="<?php echo $emailtypeid; ?>" />
+            <input type="hidden"  name="customerid" value="<?php echo $customerid; ?>" />
             <input type="hidden" name="action" value="update" />
             <input type="submit" value="Submit" />
         </form>
@@ -45,12 +45,12 @@
          
          <?php
          
-         if ( count($scope->view['EmailTypes']) <= 0 ) {
+         if ( count($scope->view['Customers']) <= 0 ) {
             echo '<p>No Data</p>';
         } else {
             
             
-             echo '<table border="1" cellpadding="5"><tr><th>Email Type</th><th>Active</th><th></th><th></th></tr>';
+             echo '<table border="1" cellpadding="5"><tr><th>Customer Name</th><th>Active</th><th></th><th></th></tr>';
              foreach ($scope->view['EmailTypes'] as $value) {
                 echo '<tr>';
                 echo '<td>', $value->getEmailtype(),'</td>';

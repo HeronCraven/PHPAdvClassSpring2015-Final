@@ -46,10 +46,8 @@ use Exception;
          * Run the application!
          */
         public function run(IService $scope) {  
-            
             $page = $this->getPage();
             if ( !$this->runController($page,$scope) ) {
-                
                 throw new ControllerFailedException('Controller for page "' . $page . '" failed');               
             }          
         }
@@ -187,36 +185,36 @@ use Exception;
         $_scope->util = new Util();
         $_validator = new Validator();
         
-        $_customerModel = new CustomerModel;
+        $_customermodel = new CustomerModel();
         //$_emailmodel = new EmailModel();
         
-        $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customerModel, $_log);
-       // $_emailDAO = new EmailDAO($_pdo->getDB(), $_emailmodel, $_log);
+        $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customermodel, $_log);
+        //$_emailDAO = new EmailDAO($_pdo->getDB(), $_emailmodel, $_log);
         
         
-        $_customerService = new CustomerService($_customerDAO, $_validator, $_customerModel );
+        $_customerService = new CustomerService($_customerDAO, $_validator, $_customermodel );
         //$_emailService = new EmailService($_emailDAO, $_emailTypeService, $_validator, $_emailmodel);
         
-         $_testService = new TestService();
+         //$_testService = new TestService();
         
         //http://php.net/manual/en/functions.anonymous.php
 
         $index->addDIController('index', function() {            
             return new \APP\controller\IndexController();
         })
-        
         ->addDIController('customer', function() use ($_customerService ) { 
             return new \APP\controller\CustomerController($_customerService);
         })
         
+       // ->addDIController('email', function() use ($_emailService ) {                        
+       //     return new \APP\controller\EmailController($_emailService);
+       // })
+        
         /*
-        ->addDIController('email', function() use ($_emailService ) {                        
-            return new \APP\controller\EmailController($_emailService);
-        })*/
         ->addDIController('test', function()  use ($_testService ){           
             return new \APP\controller\TestController($_testService);
         })
-        
+        */
         ;
         // run application!
         $index->run($_scope);

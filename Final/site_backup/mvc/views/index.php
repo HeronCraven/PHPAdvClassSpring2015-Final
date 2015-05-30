@@ -15,7 +15,7 @@
                 
         ?>
         
-        <a href="customer">Customer</a>
-        
+        <a href="customer">customer</a>
+        <a href="test">test</a>
     </body>
 </html>

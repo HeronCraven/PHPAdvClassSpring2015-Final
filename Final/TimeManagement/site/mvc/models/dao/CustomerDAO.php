@@ -57,7 +57,7 @@ class CustomerDAO extends BaseDAO implements IDAO {
                         ":active" => $model->getActive()
                     );
                          
-         if ( !$this->idExisit($model->getEmailtypeid()) ) {
+         if ( !$this->idExist($model->getCustomerID()) ) {
              
              $stmt = $db->prepare("INSERT INTO customers SET CustomerName = :customername, Description = :description ,active = :active");
              
