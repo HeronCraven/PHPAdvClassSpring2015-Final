@@ -115,6 +115,8 @@ class ProjectService implements IService {
      public function update(IModel $model) {
         
         if ( count($this->validate($model)) === 0 ) {
+            
+            
             return $this->getProjectDAO()->update($model);
         }
         return false;

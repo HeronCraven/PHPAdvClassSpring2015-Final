@@ -34,7 +34,7 @@
             
         ?>
         
-        <h3>Add Customer</h3>
+        <h3>Add Project</h3>
         <form action="#" method="post">
             <label>Project Name:</label>            
             <input type="text" name="projectName" value="<?php echo $projectName; ?>" placeholder="" />
@@ -50,6 +50,7 @@
             <select name="customerid">
             <?php 
                 foreach ($scope->view['customers'] as $value) {
+
                     if ( $value->getCustomerID() == $customerid ) {
                         echo '<option value="',$value->getCustomerID(),'" selected="selected">',$value->getCustomerName(),'</option>';  
                     } else {
