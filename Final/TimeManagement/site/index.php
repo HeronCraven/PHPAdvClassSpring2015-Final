@@ -201,7 +201,7 @@ use Exception;
         $_projectService = new ProjectService($_projectDAO, $_customerService, $_validator, $_projectmodel);
         $_signupService = new SignupService($_signupDAO, $_validator, $_signupmodel);
         
-         $_testService = new TestService();
+        $_testService = new TestService();
         
         //http://php.net/manual/en/functions.anonymous.php
 

@@ -30,17 +30,22 @@
              if ( isset($scope->view['errors']) ) {
                 print_r($scope->view['errors']);
              }
-             
-              if ( $signupDao->create($model) ) {
-                    echo '<h2>Signup complete</h2>';
-                } else {
-                    echo '<h2>Signup Failed</h2>';
-                }
-             
-         }
+
+            $model = $scope->view['model'];
+            $model->map(filter_input_array(INPUT_POST));
+            var_dump($model);
+            var_dump($scope->view['Signup']);
+            
+            if( $scope->view['saved'] ) {        
+                 echo 'Signup complete';
+            } else {
+                 echo 'Signup Failed';
+            }                 
+        }
             
         //$email = $scope->view['model']->getEmail();
-            
+        
+        $email = $scope->view['model']->getEmail();
         ?>
         
         <h1>Signup</h1>

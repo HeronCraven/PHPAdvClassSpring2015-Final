@@ -14,6 +14,7 @@ class SignupDAO extends BaseDAO implements IDAO {
     public function __construct( PDO $db, IModel$model, ILogging $log ) {        
         $this->setDB($db);
         $this->setModel($model);
+        $this->setLog($log);
     }
     
 //    private function setDB( PDO $DB) {        
