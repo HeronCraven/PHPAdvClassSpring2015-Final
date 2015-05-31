@@ -49,8 +49,7 @@ class ProjectController extends BaseController implements IController {
                 $this->data["updated"] = $this->service->update($this->data['model']);
                  $viewPage .= 'edit';
             }
-            
-            
+
         }  
         
         $this->data['customers'] = $this->service->getAllCustomers(); 

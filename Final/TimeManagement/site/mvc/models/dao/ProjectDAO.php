@@ -22,7 +22,7 @@ class ProjectDAO extends BaseDAO implements IDAO {
     }
     
     
-    public function idExist($id) {
+    public function idExists($id) {
                 
         $db = $this->getDB();
         $stmt = $db->prepare("SELECT projectid FROM projects WHERE projectid = :projectid");
@@ -63,7 +63,7 @@ class ProjectDAO extends BaseDAO implements IDAO {
                          ":customerid" => $model->getCustomerID()             
                     );
                          
-         if ( !$this->idExist($model->getProjectID()) ) {
+         if ( !$this->idExists($model->getProjectID()) ) {
              
              $stmt = $db->prepare("INSERT INTO projects SET projectname = :projectname, projecthours = :projecthours, customerid = :customerid, active = :active, logged = now(), lastupdated = now()");
              
@@ -88,7 +88,7 @@ class ProjectDAO extends BaseDAO implements IDAO {
                     );
          
                 
-         if ( $this->idExist($model->getProjectID()) ) {
+         if ( $this->idExists($model->getProjectID()) ) {
             
              $stmt = $db->prepare("UPDATE projects SET projectname = :projectname, projecthours = :projecthours, customerid = :customerid, active = :active, lastupdated = now() WHERE projectid = :projectid");
          

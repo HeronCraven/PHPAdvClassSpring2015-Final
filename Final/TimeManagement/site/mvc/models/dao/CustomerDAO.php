@@ -81,8 +81,7 @@ class CustomerDAO extends BaseDAO implements IDAO {
                         ":customerid" => $model->getCustomerID()
                     );
          
-                
-         if ( $this->idExist($model->get()) ) {
+         if ( $this->idExist($model->getCustomerID() ) ) {
             
              $stmt = $db->prepare("UPDATE customers SET customername = :customername, description = :description, active = :active WHERE customerid = :customerid");
          

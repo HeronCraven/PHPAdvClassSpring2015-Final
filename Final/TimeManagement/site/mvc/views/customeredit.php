@@ -17,6 +17,7 @@
             }                 
         }
         
+         $customerid = $scope->view['model']->getCustomerID();
          $customerName = $scope->view['model']->getCustomerName();
          $description = $scope->view['model']->getDescription();
          $active = $scope->view['model']->getActive();
