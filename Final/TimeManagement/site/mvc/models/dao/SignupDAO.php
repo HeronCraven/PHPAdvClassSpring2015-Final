@@ -11,7 +11,7 @@ class SignupDAO extends BaseDAO implements IDAO {
     //private $DB = null;
     //private $model = null;
 
-    public function __construct( PDO $db, IModel$model, ILogging $log ) {        
+    public function __construct( PDO $db, IModel $model, ILogging $log ) {        
         $this->setDB($db);
         $this->setModel($model);
         $this->setLog($log);
@@ -64,14 +64,14 @@ class SignupDAO extends BaseDAO implements IDAO {
     }
     
     
-    public function create(IModel $model) {
-                 
+    public function create(IModel $model) {        
         $db = $this->getDB();
-
+        
         $binds = array( ":email" => $model->getEmail(),
                         ":password" => password_hash($model->getPassword(), PASSWORD_DEFAULT)
                     );
-                     
+        
+                    
         $stmt = $db->prepare("INSERT INTO signup SET email = :email, password = :password, created = now()");
          
         if ( $stmt->execute($binds) && $stmt->rowCount() > 0 ) {
