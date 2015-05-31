@@ -19,5 +19,7 @@
         <a href="customer">Customer</a>
         
         <a href="project">Project</a>
+        
+        <a href="signup">SignUP</a>
     </body>
 </html>
