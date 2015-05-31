@@ -189,13 +189,17 @@ use Exception;
         
         $_customermodel = new CustomerModel;
         $_projectmodel = new ProjectModel();
+        $_signupmodel = new SignupModel();
+                
         
         $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customermodel, $_log);
         $_projectDAO = new ProjectDAO($_pdo->getDB(), $_projectmodel, $_log);
+        $_signupDAO = new SignupDAO($_pdo->getDB(), $_signupmodel, $_log);
         
         
         $_customerService = new CustomerService($_customerDAO, $_validator, $_customermodel );
         $_projectService = new ProjectService($_projectDAO, $_customerService, $_validator, $_projectmodel);
+        $_signupService = new SignupService($_signupDAO, $_validator, $_signupmodel);
         
          $_testService = new TestService();
         
@@ -217,7 +221,9 @@ use Exception;
         ->addDIController('test', function()  use ($_testService ){           
             return new \APP\controller\TestController($_testService);
         })
-        
+        ->addDIController('signup', function()  use ($_signupService ){           
+            return new \APP\controller\SignupController($_signupService);
+        }) 
         ;
         // run application!
         $index->run($_scope);
