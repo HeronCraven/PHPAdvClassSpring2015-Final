@@ -39,7 +39,7 @@
              
          }
             
-        $email = $scope->view['model']->getEmail();
+        //$email = $scope->view['model']->getEmail();
             
         ?>
         
