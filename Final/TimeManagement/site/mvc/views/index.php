@@ -9,7 +9,8 @@
         // put your code here
         
         //$scope->view;
-        var_dump($scope->view);
+        
+        //var_dump($scope->view);
         
         //*<a href="email">Email</a>
                 
@@ -17,5 +18,6 @@
         
         <a href="customer">Customer</a>
         
+        <a href="project">Project</a>
     </body>
 </html>

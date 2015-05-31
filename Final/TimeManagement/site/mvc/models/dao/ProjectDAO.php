@@ -40,7 +40,7 @@ class ProjectDAO extends BaseDAO implements IDAO {
          $db = $this->getDB();
          
          $stmt = $db->prepare("SELECT projects.projectid, projects.projectname, projects.projecthours, projects.customerid, customers.customername, customers.active as customeractive, projects.logged, projects.lastupdated, projects.active"
-                 . " FROM projects LEFT JOIN customers on customers.customerid = customers.customerid WHERE projectid = :projectid");
+                 . " FROM projects LEFT JOIN customers on projects.customerid = customers.customerid WHERE projectid = :projectid");
          
         if ( $stmt->execute(array(':projectid' => $id)) && $stmt->rowCount() > 0 ) {
              $results = $stmt->fetch(PDO::FETCH_ASSOC);

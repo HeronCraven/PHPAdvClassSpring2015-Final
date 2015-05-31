@@ -35,7 +35,7 @@ class ProjectService implements IService {
     }
     
     function getCustomerService() {
-        return $this->CustomerService;
+        return $this->customerService;
     }
 
     function setCustomerService(IService $service) {

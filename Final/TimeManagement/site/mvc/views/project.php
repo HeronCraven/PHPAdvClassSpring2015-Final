@@ -24,8 +24,10 @@
              }
              
          }
+         
+         //var_dump($scope->view);
         
-            $projectname = $scope->view['model']->getProjectName();
+            $projectName = $scope->view['model']->getProjectName();
             $projecthours= $scope->view['model']->getProjectHours();
             $active = $scope->view['model']->getActive();
             $customerid = $scope->view['model']->getCustomerID();
@@ -35,7 +37,7 @@
         <h3>Add Customer</h3>
         <form action="#" method="post">
             <label>Project Name:</label>            
-            <input type="text" name="projectname" value="<?php echo $projectname; ?>" placeholder="" />
+            <input type="text" name="projectName" value="<?php echo $projectName; ?>" placeholder="" />
             <br /><br />
             <label>Project Hours:</label>            
             <input type="number" max="8" min="0"  name="projecthours" value="<?php echo $projecthours; ?>" placeholder="" />

@@ -42,6 +42,7 @@ and open the template in the editor.
         <form action="#" method="post">
             <label>Customer Name:</label> 
             <input type="text" name="customername" value="<?php echo $customerName; ?>" placeholder="" />
+            <label>Description:</label> 
             <input type="text" name="description" value="<?php echo $description; ?>" placeholder="" />
             <input type="number" max="1" min="0" name="Active" value="<?php echo $active; ?>" />
             <input type="hidden" name="action" value="create" />

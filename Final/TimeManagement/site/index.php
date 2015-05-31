@@ -187,15 +187,15 @@ use Exception;
         $_scope->util = new Util();
         $_validator = new Validator();
         
-        $_customerModel = new CustomerModel;
-        $_projectmodel = new EmailModel();
+        $_customermodel = new CustomerModel;
+        $_projectmodel = new ProjectModel();
         
-        $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customerModel, $_log);
-       // $_emailDAO = new EmailDAO($_pdo->getDB(), $_emailmodel, $_log);
+        $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customermodel, $_log);
+        $_projectDAO = new ProjectDAO($_pdo->getDB(), $_projectmodel, $_log);
         
         
-        $_customerService = new CustomerService($_customerDAO, $_validator, $_customerModel );
-        //$_emailService = new EmailService($_emailDAO, $_emailTypeService, $_validator, $_emailmodel);
+        $_customerService = new CustomerService($_customerDAO, $_validator, $_customermodel );
+        $_projectService = new ProjectService($_projectDAO, $_customerService, $_validator, $_projectmodel);
         
          $_testService = new TestService();
         
@@ -208,11 +208,12 @@ use Exception;
         ->addDIController('customer', function() use ($_customerService ) { 
             return new \APP\controller\CustomerController($_customerService);
         })
+
         
-        /*
-        ->addDIController('email', function() use ($_emailService ) {                        
-            return new \APP\controller\EmailController($_emailService);
-        })*/
+        ->addDIController('project', function() use ($_projectService ) {                        
+            return new \APP\controller\ProjectController($_projectService);
+        })
+        
         ->addDIController('test', function()  use ($_testService ){           
             return new \APP\controller\TestController($_testService);
         })
