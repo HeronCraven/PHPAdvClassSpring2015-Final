@@ -22,7 +22,7 @@
                      //$scope->util->setLoggedin(true);
                      //$scope->util->redirect('is-logged-in.php');
                 } else {
-                    //var_dump(isset($scope->view['login']));
+                    var_dump(isset($scope->view['login']));
                     echo 'Login Failed';
                 }
             }
@@ -34,7 +34,7 @@
             Password : <input type="password" name="password" value="" /> <br /> 
             <br />
             <input type="hidden" name="action" value="login" />
-            <input type="submit" value="Signup" />
+            <input type="submit" value="login" />
             
         </form>
     </body>
