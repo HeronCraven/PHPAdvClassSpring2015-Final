@@ -143,9 +143,7 @@ use Exception;
             
             return $page;
         }
-        
-        
-        
+
         
     /**
      * Generate link.
@@ -168,9 +166,6 @@ use Exception;
 
 }
 
-
-
-       
     //http://php.net/manual/en/language.oop5.typehinting.php
     function runPage() {
         $_configURL = '.' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.ini.php';
@@ -190,20 +185,21 @@ use Exception;
         $_customermodel = new CustomerModel;
         $_projectmodel = new ProjectModel();
         $_signupmodel = new SignupModel();
-                
+        $_loginmodel = new LoginModel();      
         
         $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customermodel, $_log);
         $_projectDAO = new ProjectDAO($_pdo->getDB(), $_projectmodel, $_log);
         $_signupDAO = new SignupDAO($_pdo->getDB(), $_signupmodel, $_log);
-        
+        $_loginDAO = new SignupDAO($_pdo->getDB(), $_loginmodel, $_log);
         
         $_customerService = new CustomerService($_customerDAO, $_validator, $_customermodel );
         $_projectService = new ProjectService($_projectDAO, $_customerService, $_validator, $_projectmodel);
         $_signupService = new SignupService($_signupDAO, $_validator, $_signupmodel);
+        $_loginService = new SignupService($_loginDAO, $_validator, $_loginmodel);
         
         $_testService = new TestService();
-        
-        //http://php.net/manual/en/functions.anonymous.php
+
+//http://php.net/manual/en/functions.anonymous.php
 
         $index->addDIController('index', function() {            
             return new \APP\controller\IndexController();
@@ -221,9 +217,15 @@ use Exception;
         ->addDIController('test', function()  use ($_testService ){           
             return new \APP\controller\TestController($_testService);
         })
+        
         ->addDIController('signup', function()  use ($_signupService ){           
             return new \APP\controller\SignupController($_signupService);
         }) 
+        
+        ->addDIController('login', function()  use ($_loginService ){           
+            return new \APP\controller\LoginController($_loginService);
+        }) 
+        
         ;
         // run application!
         $index->run($_scope);

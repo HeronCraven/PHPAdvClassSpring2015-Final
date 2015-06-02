@@ -11,7 +11,7 @@ use App\models\interfaces\IDAO;
 use App\models\interfaces\IService;
 use App\models\interfaces\IModel;
 
-class SignupService implements IService {
+class LoginService implements IService {
     protected $DAO;
     protected $validator;
     protected $model;
@@ -36,8 +36,8 @@ class SignupService implements IService {
      function setDAO(IDAO $DAO) {
          $this->DAO = $DAO;
     }
-    public function __construct(IDAO $SignupDAO, IService $validator, IModel $model) {
-        $this->setDAO($SignupDAO);
+    public function __construct(IDAO $LoginDAO, IService $validator, IModel $model) {
+        $this->setDAO($LoginDAO);
         $this->setValidator($validator);
         $this->setModel($model);
     }
@@ -64,7 +64,7 @@ class SignupService implements IService {
         }
         return false;
     }
-    /*
+    
     public function login(IModel $model) {
         
         if ( count($this->validate($model)) === 0 ) {
@@ -72,7 +72,7 @@ class SignupService implements IService {
         }
         return false;
     }
-    */
+    
     public function update(IModel $model) {
         
         if ( count($this->validate($model)) === 0 ) {
@@ -98,7 +98,7 @@ class SignupService implements IService {
         return $errors;
     }
 
-    public function getNewSignupModel() {
+    public function getNewLoginModel() {
         return clone $this->getModel();
     }
 }

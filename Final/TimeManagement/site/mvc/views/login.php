@@ -7,21 +7,20 @@
     </head>
     <body>
         <?php
-         $util = new Util();
-            
-            if ( $util->isPostRequest() ) {
-                $db = new DB($dbConfig); 
-                $model = new SignupModel();
-                $signupDao = new SignupDAO($db->getDB(), $model);            
+                       
+            if ( $scope->util->isPostRequest() ) {
+                
+                if ( isset($scope->view['errors']) ) {
+                   print_r($scope->view['errors']);
+                }
 
-                $model->map(filter_input_array(INPUT_POST));
-                                
-                if ( $signupDao->login($model) ) {
-                    echo '<h2>Login Sucess</h2>';
-                    $util->setLoggedin(true);
-                    $util->redirect('is-logged-in.php');
+                if ( isset($scope->view['login']) && $scope->view['login'] ) {
+                     echo 'Login Complete';
+                     //$scope->util->setLoggedin(true);
+                     //$scope->util->redirect('is-logged-in.php');
                 } else {
-                    echo '<h2>Login Failed</h2>';
+                    //var_dump(isset($scope->view['login']));
+                    echo 'Login Failed';
                 }
             }
         ?>
@@ -32,6 +31,7 @@
             Email : <input type="email" name="email" value="" /> <br />
             Password : <input type="password" name="password" value="" /> <br /> 
             <br />
+            <input type="hidden" name="action" value="login" />
             <input type="submit" value="Signup" />
             
         </form>

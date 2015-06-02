@@ -6,7 +6,7 @@ use App\models\interfaces\IModel;
 use App\models\interfaces\ILogging;
 use \PDO;
 
-class SignupDAO extends BaseDAO implements IDAO {
+class LoginDAO extends BaseDAO implements IDAO {
     
     //private $DB = null;
     //private $model = null;
