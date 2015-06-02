@@ -1,7 +1,9 @@
 <?php
 
 /**
- * Description of EmailModel
+ * Description of Project Model
+ * 
+ * This model stores project information for the specified customer.
  *
  * @author KHERON
  */

@@ -1,8 +1,11 @@
 <?php
 /**
- * Description of EmailService
+ * Description of ProjectService
  *
- * @author KHERON
+ * Project Service will pass the project model and access data 
+ * from the project table. 
+ * 
+ * @author HERON_CRAVEN
  */
 
 namespace App\models\services;

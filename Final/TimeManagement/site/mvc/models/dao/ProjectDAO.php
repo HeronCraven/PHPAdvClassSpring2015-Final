@@ -1,8 +1,10 @@
 <?php
 /**
- * Description of ProjectDAO
+ * Description of SignupDAO
  *
- * @author kheron
+ * Project DAO stores data in the projects database from the project model class.
+ * Projects are linked to the customer table by the customer ID.
+ * @author HERON_CRAVEN
  */
 
 namespace App\models\services;
@@ -86,12 +88,12 @@ class ProjectDAO extends BaseDAO implements IDAO {
                          ":projectid" => $model->getProjectID()   
                     );
          
-           var_dump($binds);
-           var_dump($this->idExist($model->getProjectID()));
+           //var_dump($binds);
+           //var_dump($this->idExist($model->getProjectID()));
            
          if ( $this->idExist($model->getProjectID()) ) {
             
-             var_dump($model->getProjectID());
+             //var_dump($model->getProjectID());
              
              $stmt = $db->prepare("UPDATE projects SET projectname = :projectname, projecthours = :projecthours, customerid = :customerid, active = :active, lastupdated = now() WHERE projectid = :projectid");
          
@@ -106,7 +108,7 @@ class ProjectDAO extends BaseDAO implements IDAO {
          
          return false;
     }
-    
+    //delete by ID
     public function delete($id) {
           
         $db = $this->getDB();         
@@ -122,6 +124,8 @@ class ProjectDAO extends BaseDAO implements IDAO {
          return false;
     }
     
+    
+    //Get all rows from projects database
     public function getAllRows() {
        $db = $this->getDB();
        $values = array();

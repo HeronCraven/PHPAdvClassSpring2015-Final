@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css"
-              href="/PHPAdvancedClass2015-Final/Final/TimeManagement/site/main.css" />
+              href="main.css" 
+              >
     </head>
     <body>
         <div id="page">
@@ -24,7 +25,7 @@
                  echo 'Signup Complete';
             } else {
 
-                var_dump(isset($scope->view['saved']));
+                //var_dump(isset($scope->view['saved']));
                 echo 'Signup Failed';
             }
             

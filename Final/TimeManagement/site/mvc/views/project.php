@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css"
-              href="/PHPAdvancedClass2015-Final/Final/TimeManagement/site/main.css" />
+              href="main.css" 
+              >
     </head>
     <body>
         <div id="page">
@@ -21,11 +22,11 @@
              }
              
              if ( isset($scope->view['saved']) && $scope->view['saved'] ) {
-                  echo 'Project Added';
+                  echo '<center style="color:green;">Project Added</center>';
              }
              
              if ( isset($scope->view['deleted']) && $scope->view['deleted'] ) {
-                  echo 'Project deleted';
+                  echo '<center style="color:red;">Project deleted</center>';
              }
              
          }
