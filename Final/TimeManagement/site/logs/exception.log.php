@@ -676,3 +676,4 @@
 [556a5cd4d524d]	[exception]	[05-31-2015 2:59am]	SQLSTATE[HY000] [1049] Unknown database 'phpadvclass2015lab'
 [556a5cd4dea72]	[exception]	[05-31-2015 2:59am]	SQLSTATE[HY000] [1049] Unknown database 'phpadvclass2015lab'
 [556a5cd4e53e9]	[exception]	[05-31-2015 2:59am]	SQLSTATE[HY000] [1049] Unknown database 'phpadvclass2015lab'
+[556d2a172b2e9]	[exception]	[06-02-2015 5:59am]	Controller for page "l" failed

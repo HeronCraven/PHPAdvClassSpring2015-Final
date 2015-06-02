@@ -8,23 +8,6 @@
     <body>
         <?php
         
-            //$util = new Util();
-//            if ( $scope->util->isPostRequest() )
-//            
-//            if ( $util->isPostRequest() ) {
-//                //$db = new DB($dbConfig); 
-//               // $model = new SignupModel();
-//                //$signupDao = new SignupDAO($db->getDB(), $model);            
-//
-//                //$model->map(filter_input_array(INPUT_POST));
-//                                
-//                if ( $signupDao->create($model) ) {
-//                    echo '<h2>Signup complete</h2>';
-//                } else {
-//                    echo '<h2>Signup Failed</h2>';
-//                }
-//            }
-            
         if ( $scope->util->isPostRequest() ) {
              
             if ( isset($scope->view['errors']) ) {
@@ -40,8 +23,6 @@
             }
             
         }
-            
-        //$email = $scope->view['model']->getEmail();
         
         $email = $scope->view['model']->getEmail();
         $active = $scope->view['model']->getActive();
@@ -59,7 +40,5 @@
             <input type="submit" value="Signup" />
             
         </form>
-        
-        
     </body>
 </html>

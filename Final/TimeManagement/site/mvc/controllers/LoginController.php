@@ -17,19 +17,19 @@ namespace APP\controller;
 use App\models\interfaces\IController;
 use App\models\interfaces\IService;
 
-class SignupController extends BaseController implements IController {
+class LoginController extends BaseController implements IController {
        
-    public function __construct( IService $SignupService ) {                
-        $this->service = $SignupService;     
+    public function __construct( IService $LoginService ) {                
+        $this->service = $LoginService;     
         
     }
 
 
     public function execute(IService $scope) {
                 
-        $this->data['model'] = $this->service->getNewSignupModel();
+        $this->data['model'] = $this->service->getNewLoginModel();
         $this->data['model']->reset();
-        $viewPage = 'signup';
+        $viewPage = 'login';
         
         
         if ( $scope->util->isPostRequest() ) {

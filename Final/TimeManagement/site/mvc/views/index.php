@@ -20,6 +20,8 @@
         
         <a href="project">Project</a>
         
-        <a href="signup">SignUP</a>
+        <a href="signup">Sign Up</a>
+        
+        <a href="login">Login</a>
     </body>
 </html>
