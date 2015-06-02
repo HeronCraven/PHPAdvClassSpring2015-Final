@@ -677,3 +677,21 @@
 [556a5cd4dea72]	[exception]	[05-31-2015 2:59am]	SQLSTATE[HY000] [1049] Unknown database 'phpadvclass2015lab'
 [556a5cd4e53e9]	[exception]	[05-31-2015 2:59am]	SQLSTATE[HY000] [1049] Unknown database 'phpadvclass2015lab'
 [556d2a172b2e9]	[exception]	[06-02-2015 5:59am]	Controller for page "l" failed
+[556e3004b4aea]	[exception]	[06-03-2015 12:36am]	SQLSTATE[HY000] [2006] MySQL server has gone away
+[556e3006c34a7]	[exception]	[06-03-2015 12:36am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e3008d68b5]	[exception]	[06-03-2015 12:36am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e300aea58b]	[exception]	[06-03-2015 12:36am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e300d01da5]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e300f1059c]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e3011262ee]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e3013306df]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e301542edd]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e301751471]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.

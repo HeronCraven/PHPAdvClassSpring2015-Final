@@ -18,7 +18,7 @@
          if ( $scope->util->isPostRequest() ) {
              
              if ( isset($scope->view['errors']) ) {
-                print_r($scope->view['errors']);
+                //print_r($scope->view['errors']);
              }
              
              if ( isset($scope->view['saved']) && $scope->view['saved'] ) {

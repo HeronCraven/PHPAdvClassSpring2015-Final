@@ -85,4 +85,18 @@ class Util implements IService {
     public function isGetRequest() {
         return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'GET' );
     }
+    /**
+     * 
+     * A method to check if logged in
+     */
+    public function isLoggedin() {
+        return ( isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true );
+    }
+    /*
+     * A method to set logged in value
+     */
+    public function setLoggedin($value) {
+        $_SESSION['loggedin'] = $value;
+    }
+    
 }
