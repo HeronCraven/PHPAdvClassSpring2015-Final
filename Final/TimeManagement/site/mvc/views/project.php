@@ -18,7 +18,7 @@
          if ( $scope->util->isPostRequest() ) {
              
              if ( isset($scope->view['errors']) ) {
-                print_r($scope->view['errors']);
+                //print_r($scope->view['errors']);
              }
              
              if ( isset($scope->view['saved']) && $scope->view['saved'] ) {
@@ -26,7 +26,7 @@
              }
              
              if ( isset($scope->view['deleted']) && $scope->view['deleted'] ) {
-                  echo '<center style="color:red;">Project deleted</center>';
+                  echo '<center style="color:red;">Project Deleted</center>';
              }
              
          }

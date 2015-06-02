@@ -1,12 +1,13 @@
 <?php
 
 /**
- * Description of Project Model
+ * Description of Customer Model
  * 
- * This model stores project information for the specified customer.
+ * This model stores project information.
  *
- * @author KHERON
+ * @author HERON_CRAVEN
  */
+
 
 namespace App\models\services;
 

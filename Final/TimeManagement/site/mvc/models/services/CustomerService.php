@@ -85,13 +85,12 @@ class CustomerService implements IService {
     }
     
     public function validate( IModel $model ) {
-        $errors = array();
         
+        $errors = array();
         /*
         if ( !$this->getValidator()->emailTypeIsValid($model->getEmailtype()) ) {
             $errors[] = 'Email Type is invalid';
         }
-          
         */
         
         if ( !$this->getValidator()->activeIsValid($model->getActive()) ) {

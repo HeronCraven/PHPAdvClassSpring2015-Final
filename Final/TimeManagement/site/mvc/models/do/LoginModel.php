@@ -1,4 +1,13 @@
 <?php
+
+/**
+ * Description of Customer Model
+ * 
+ * This model stores login information.
+ *
+ * @author HERON_CRAVEN
+ */
+
 namespace App\models\services;
 
 class LoginModel extends BaseModel{

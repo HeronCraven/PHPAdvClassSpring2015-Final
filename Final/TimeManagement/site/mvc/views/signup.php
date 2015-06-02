@@ -18,15 +18,15 @@
         if ( $scope->util->isPostRequest() ) {
              
             if ( isset($scope->view['errors']) ) {
-               print_r($scope->view['errors']);
+               //print_r($scope->view['errors']);
             }
 
             if ( isset($scope->view['saved']) && $scope->view['saved'] ) {
-                 echo 'Signup Complete';
+                 echo '<center style="color:green;">Signup Complete</center>';
             } else {
 
                 //var_dump(isset($scope->view['saved']));
-                echo 'Signup Failed';
+                echo '<center style="color:green;">Signup Failed</center>';
             }
             
         }
