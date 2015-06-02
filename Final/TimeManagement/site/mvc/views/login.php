@@ -26,7 +26,6 @@
                      $scope->util->setLoggedin(true);
                      $scope->util->redirect('index.php');
                 } else {
-                    var_dump($scope);
                     echo 'Login Failed';
                 } 
             }
