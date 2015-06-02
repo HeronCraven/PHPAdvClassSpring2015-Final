@@ -3,8 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" type="text/css"
+              href="/PHPAdvancedClass2015-Final/Final/TimeManagement/site/main.css" />
     </head>
     <body>
+        <div id="page">
+            <div id="header"><h1>Customer Page</h1></div>
+        <div id="main">
         <a href="index">Home</a>
         <?php
         // put your code here
@@ -92,6 +97,16 @@
                 echo '</table>';
             }
          ?>
-          
+        </div>
+        
+        <div id="footer">
+            <center>
+                <h3>
+                Jarrod Craven <br /><br />
+                Korey Heron <br />
+                </h3>
+            </center>
+        </div>
+        </div>  
     </body>
 </html>

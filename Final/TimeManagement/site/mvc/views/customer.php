@@ -8,8 +8,13 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" type="text/css"
+              href="/PHPAdvancedClass2015-Final/Final/TimeManagement/site/main.css" />
     </head>
     <body>
+        <div id="page">
+            <div id="header"><h1>Customer Page</h1></div>
+        <div id="main">
         <a href="index">Home</a>
         <?php
         // put your code here
@@ -39,7 +44,7 @@ and open the template in the editor.
         
         
          <h3>Add Customer</h3>
-        <form action="#" method="post">
+        <form action="#" method="post" id="customer_form">
             <label>Customer Name:</label> 
             <input type="text" name="customername" value="<?php echo $customerName; ?>" placeholder="" />
             <label>Description:</label> 
@@ -81,5 +86,16 @@ and open the template in the editor.
          
          
          ?>
+        </div>
+        
+        <div id="footer">
+            <center>
+                <h3>
+                Jarrod Craven <br /><br />
+                Korey Heron <br />
+                </h3>
+            </center>
+        </div>
+        </div>
     </body>
 </html>
