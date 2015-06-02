@@ -69,7 +69,7 @@ class LoginService implements IService {
     }
     
     public function login(IModel $model) {
-        
+
         if ( count($this->validate($model)) === 0 ) {
             return $this->getDAO()->login($model);
         }
@@ -93,11 +93,11 @@ class LoginService implements IService {
         }
           
         */
-        
+        /*
         if ( !$this->getValidator()->activeIsValid($model->getActive()) ) {
             $errors[] = 'Signup active is invalid';
         }
-
+*/
         return $errors;
     }
 

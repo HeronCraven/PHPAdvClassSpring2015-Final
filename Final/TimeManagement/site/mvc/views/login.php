@@ -23,22 +23,26 @@
 
                 if ( isset($scope->view['login']) && $scope->view['login'] ) {
                      echo 'Login Complete';
-                     //$scope->util->setLoggedin(true);
-                     //$scope->util->redirect('is-logged-in.php');
+                     $scope->util->setLoggedin(true);
+                     $scope->util->redirect('is-logged-in.php');
                 } else {
-                    //var_dump(isset($scope->view['login']));
+                    var_dump($scope);
                     echo 'Login Failed';
-                }
+                } 
             }
+            
+            $email = $scope->view['model']->getEmail();
+            $password = $scope->view['model']->getPassword();
+            
         ?>
          <h1>Login</h1>
         <form action="#" method="POST" id="customer_form">
             
-            Email : <input type="email" name="email" value="" /> <br /><br />
-            Password : <input type="password" name="password" value="" /> <br /> 
+            Email : <input type="email" name="email" value="<?php echo $email; ?>" /> <br /><br />
+            Password : <input type="password" name="password" value="<?php echo $password; ?>" /> <br /> 
             <br />
             <input type="hidden" name="action" value="login" />
-            <input type="submit" value="Signup" />
+            <input type="submit" value="Login" />
             
         </form>
          </div>
