@@ -195,7 +195,7 @@ use Exception;
         $_customerService = new CustomerService($_customerDAO, $_validator, $_customermodel );
         $_projectService = new ProjectService($_projectDAO, $_customerService, $_validator, $_projectmodel);
         $_signupService = new SignupService($_signupDAO, $_validator, $_signupmodel);
-        $_loginService = new SignupService($_loginDAO, $_validator, $_loginmodel);
+        $_loginService = new loginService($_loginDAO, $_validator, $_loginmodel);
         
         $_testService = new TestService();
 
