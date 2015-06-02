@@ -60,7 +60,7 @@ class SignupController extends BaseController implements IController {
         }
         
         //$this->data['Signups'] = $this->service->getAllRows();        
-        $this->data['Signup'] = $this->service->create($this->data['model']);
+        //$this->data['Signup'] = $this->service->create($this->data['model']);
         
         
         $scope->view = $this->data;
