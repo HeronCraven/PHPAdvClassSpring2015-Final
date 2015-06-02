@@ -190,12 +190,12 @@ use Exception;
         $_customerDAO = new CustomerDAO($_pdo->getDB(), $_customermodel, $_log);
         $_projectDAO = new ProjectDAO($_pdo->getDB(), $_projectmodel, $_log);
         $_signupDAO = new SignupDAO($_pdo->getDB(), $_signupmodel, $_log);
-        $_loginDAO = new SignupDAO($_pdo->getDB(), $_loginmodel, $_log);
+        $_loginDAO = new LoginDAO($_pdo->getDB(), $_loginmodel, $_log);
         
         $_customerService = new CustomerService($_customerDAO, $_validator, $_customermodel );
         $_projectService = new ProjectService($_projectDAO, $_customerService, $_validator, $_projectmodel);
         $_signupService = new SignupService($_signupDAO, $_validator, $_signupmodel);
-        $_loginService = new SignupService($_loginDAO, $_validator, $_loginmodel);
+        $_loginService = new LoginService($_loginDAO, $_validator, $_loginmodel);
         
         $_testService = new TestService();
 
