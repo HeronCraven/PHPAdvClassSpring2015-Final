@@ -2,6 +2,7 @@
 /**
  * Description of CustomerDAO
  *
+ * Customer DAO for accessing data in the customer table.
  * @author kheron
  */
 

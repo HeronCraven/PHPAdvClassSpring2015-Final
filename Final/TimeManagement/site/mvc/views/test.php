@@ -32,8 +32,7 @@
         
         
         <?php
-        
-        
+
         //var_dump($scope->view);
         
         echo $scope->view['test1'];
@@ -41,7 +40,6 @@
         if ( isset($scope->view['test3']) ) {
             echo $scope->view['test3'];
         }
-        
         
         ?>
     </body>

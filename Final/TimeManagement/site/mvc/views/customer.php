@@ -24,15 +24,15 @@ and open the template in the editor.
          if ( $scope->util->isPostRequest() ) {
              
              if ( isset($scope->view['errors']) ) {
-                print_r($scope->view['errors']);
+                //print_r($scope->view['errors']);
              }
              
              if ( isset($scope->view['saved']) && $scope->view['saved'] ) {
-                  echo 'Customer Added';
+                  echo '<center style="color:green;">Customer Added</center>';
              }
              
              if ( isset($scope->view['deleted']) && $scope->view['deleted'] ) {
-                  echo 'Customer deleted';
+                  echo '<center style="color:red;">Customer Deleted</center>';
              }
              
          }

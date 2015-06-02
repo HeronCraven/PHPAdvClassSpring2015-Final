@@ -2,7 +2,7 @@
 /**
  * Description of ProjectController
  *
- * @author KHERON
+ * @author HERON_CRAVEN
  */
 
 namespace APP\controller;

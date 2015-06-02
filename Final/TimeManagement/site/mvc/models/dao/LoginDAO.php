@@ -1,4 +1,12 @@
 <?php
+/**
+ * Description of CustomerDAO
+ *
+ * Customer DAO for accessing data in the customer table from 
+ * the model passed through.
+ * @author kheron
+ */
+
 namespace App\models\services;
 
 use App\models\interfaces\IDAO;

@@ -26,7 +26,7 @@
              }
              
              if ( isset($scope->view['deleted']) && $scope->view['deleted'] ) {
-                  echo '<center style="color:red;">Project deleted</center>';
+                  echo '<center style="color:red;">Project Deleted</center>';
              }
              
          }

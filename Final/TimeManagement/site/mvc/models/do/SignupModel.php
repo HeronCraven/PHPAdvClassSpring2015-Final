@@ -1,7 +1,16 @@
 <?php
+
+/**
+ * Description of Customer Model
+ * 
+ * This model stores signup information.
+ *
+ * @author HERON_CRAVEN
+ */
+
 namespace App\models\services;
 
-//Signup model for logging user information into the signup database
+
 class SignupModel extends BaseModel{
     
     private $id;

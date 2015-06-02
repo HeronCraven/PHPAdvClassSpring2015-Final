@@ -4,6 +4,7 @@
  *
  * Project DAO stores data in the projects database from the project model class.
  * Projects are linked to the customer table by the customer ID.
+ * 
  * @author HERON_CRAVEN
  */
 

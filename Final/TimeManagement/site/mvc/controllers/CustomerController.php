@@ -1,15 +1,9 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of CustomertypeController
+ * Description of CustomerController
  *
- * @author KHERON
+ * @author HERON_CRAVEN
  */
 
 namespace APP\controller;

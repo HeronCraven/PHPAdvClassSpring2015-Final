@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Description of Customer Model
  * 
- * This model stores customer information in the customers database.
+ * This model stores customer information.
  *
  * @author HERON_CRAVEN
  */

@@ -11,7 +11,7 @@
             if ( $scope->util->isPostRequest() ) {
                 
                 if ( isset($scope->view['errors']) ) {
-                   print_r($scope->view['errors']);
+                   //print_r($scope->view['errors']);
                 }
 
                 if ( isset($scope->view['login']) && $scope->view['login'] ) {
@@ -24,7 +24,6 @@
                 }
             }
         ?>
-        
          <h1>Login</h1>
         <form action="#" method="POST">
             
