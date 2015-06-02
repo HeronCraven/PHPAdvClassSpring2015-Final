@@ -50,7 +50,7 @@
             </select>
             
              <br /><br />
-             <input type="hidden"  name="projectid" value="<?php echo $customerid; ?>" />
+             <input type="hidden"  name="projectid" value="<?php echo $projectid; ?>" />
             <input type="hidden" name="action" value="update" />
             <input type="submit" value="Submit" />
         </form>

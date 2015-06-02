@@ -22,11 +22,11 @@ class ProjectDAO extends BaseDAO implements IDAO {
     }
     
     
-    public function idExists($id) {
+    public function idExist($id) {
                 
         $db = $this->getDB();
         $stmt = $db->prepare("SELECT projectid FROM projects WHERE projectid = :projectid");
-         
+        
         if ( $stmt->execute(array(':projectid' => $id)) && $stmt->rowCount() > 0 ) {
             return true;
         }
@@ -48,8 +48,6 @@ class ProjectDAO extends BaseDAO implements IDAO {
         }
          
         return $model;
-         
-        
     }
     
     
@@ -63,7 +61,7 @@ class ProjectDAO extends BaseDAO implements IDAO {
                          ":customerid" => $model->getCustomerID()             
                     );
                          
-         if ( !$this->idExists($model->getProjectID()) ) {
+         if ( !$this->idExist($model->getProjectID()) ) {
              
              $stmt = $db->prepare("INSERT INTO projects SET projectname = :projectname, projecthours = :projecthours, customerid = :customerid, active = :active, logged = now(), lastupdated = now()");
              
@@ -84,12 +82,17 @@ class ProjectDAO extends BaseDAO implements IDAO {
         $binds = array( ":projectname" => $model->getProjectName(),
                          ":projecthours" => $model->getProjectHours(),
                          ":active" => $model->getActive(),
-                         ":customerid" => $model->getCustomerID()             
+                         ":customerid" => $model->getCustomerID(),
+                         ":projectid" => $model->getProjectID()   
                     );
          
-                
-         if ( $this->idExists($model->getProjectID()) ) {
+           var_dump($binds);
+           var_dump($this->idExist($model->getProjectID()));
+           
+         if ( $this->idExist($model->getProjectID()) ) {
             
+             var_dump($model->getProjectID());
+             
              $stmt = $db->prepare("UPDATE projects SET projectname = :projectname, projecthours = :projecthours, customerid = :customerid, active = :active, lastupdated = now() WHERE projectid = :projectid");
          
              if ( $stmt->execute($binds) && $stmt->rowCount() > 0 ) {
@@ -124,7 +127,7 @@ class ProjectDAO extends BaseDAO implements IDAO {
        $values = array();
        
        $stmt = $db->prepare("SELECT projects.projectid, projects.projectname, projects.projecthours, projects.customerid, customers.customername, customers.active as customeractive, projects.logged, projects.lastupdated, projects.active"
-                 . " FROM projects LEFT JOIN customers on customers.customerid = customers.customerid");
+                 . " FROM projects LEFT JOIN customers on projects.customerid = customers.customerid");
         
         if ( $stmt->execute() && $stmt->rowCount() > 0 ) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
