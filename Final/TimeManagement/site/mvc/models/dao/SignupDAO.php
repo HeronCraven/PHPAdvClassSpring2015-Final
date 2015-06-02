@@ -1,4 +1,13 @@
 <?php
+/**
+ * Description of SignupDAO
+ *
+ * SignUP DAO uses the signup model to create and store the users email and password 
+ * information in the signup database.
+ * @author HERON_CRAVEN
+ */
+
+
 namespace App\models\services;
 
 use App\models\interfaces\IDAO;
@@ -47,6 +56,7 @@ class SignupDAO extends BaseDAO implements IDAO {
          
          return $model;
     }
+    //Login function will verify the login information enetered is valid.
     public function login(IModel $model) {
          
         $email = $model->getEmail();
@@ -63,6 +73,8 @@ class SignupDAO extends BaseDAO implements IDAO {
         return false;
     }
     
+    //Create function will store the user's e-mail address and password 
+    //in the SQL database.
     
     public function create(IModel $model) {        
         $db = $this->getDB();
@@ -81,7 +93,7 @@ class SignupDAO extends BaseDAO implements IDAO {
          return false;
     }
     
-    
+    //Update function not accessed
     public function update(IModel $model) {
           
         $db = $this->getDB();
@@ -99,7 +111,9 @@ class SignupDAO extends BaseDAO implements IDAO {
 
         return false;
     }
-      public function delete($id) {
+    
+    //Delete function not accessed.
+    public function delete($id) {
           
         $db = $this->getDB();         
         $stmt = $db->prepare("Delete FROM customers WHERE customerid = :customerid");

@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css"
-              href="main.css" />
+              href="main.css" 
+              >
     </head>
     <body>
         <div id="page">
@@ -17,9 +18,9 @@
         
          if ( isset($scope->view['updated']) ) {
             if( $scope->view['updated'] ) {        
-                 echo 'Project Updated';
+                 echo '<center style="color:green;">Project Updated</center>';
             } else {
-                 echo 'Project NOT Updated';
+                 echo '<center style="color:red;">Project Not Updated</center>';
             }                 
         }
         

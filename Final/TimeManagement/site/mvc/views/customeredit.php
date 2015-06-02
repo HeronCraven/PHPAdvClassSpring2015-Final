@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css"
-              href="/PHPAdvancedClass2015-Final/Final/TimeManagement/site/main.css" />
+              href="main.css" 
+              >
     </head>
     <body>
         <div id="page">
@@ -17,9 +18,9 @@
         
         if ( isset($scope->view['updated']) ) {
             if( $scope->view['updated'] ) {        
-                 echo 'Customer Updated';
+                 echo '<center style="color:green;">Customer Updated</center>';
             } else {
-                 echo 'Customer NOT Updated';
+                 echo '<center style="color:red;">Customer Not Updated</center>';
             }                 
         }
         

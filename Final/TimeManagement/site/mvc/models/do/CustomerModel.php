@@ -1,9 +1,11 @@
 <?php
 
 /**
- * Description of 
+ * Description of Customer Model
+ * 
+ * This model stores customer information in the customers database.
  *
- * @author KHERON
+ * @author HERON_CRAVEN
  */
 
 namespace App\models\services;

@@ -1,15 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of EmailTypeService
+ * Description of CustomerService
  *
- * @author KHERON
+ * Customer Service will pass the customer model and access data 
+ * from the customer table. 
+ * 
+ * @author HERON_CRAVEN
  */
 
 namespace App\models\services;
