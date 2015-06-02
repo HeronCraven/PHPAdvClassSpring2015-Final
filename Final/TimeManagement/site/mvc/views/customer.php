@@ -19,9 +19,10 @@ and open the template in the editor.
         <a href="index">Home</a>
         <?php
         // put your code here
-        
        
          if ( $scope->util->isPostRequest() ) {
+             
+             
              
              if ( isset($scope->view['errors']) ) {
                 //print_r($scope->view['errors']);

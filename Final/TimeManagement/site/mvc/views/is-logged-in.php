@@ -8,8 +8,7 @@
     </head>
     <body>
         <?php
-            $util = new Util();
-            if ( !$util->isLoggedin() ) {
+             if ( $scope->util->isPostRequest() ) {
                 // redirect to login page
                 echo '<h2>Not logged in</h2>';
             } else {
