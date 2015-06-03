@@ -30,8 +30,11 @@ and open the template in the editor.
              
              if ( isset($scope->view['saved']) && $scope->view['saved'] ) {
                   echo '<center style="color:green;">Customer Added</center>';
-             }
+             } 
+             if ( isset($scope->view['saved']) && !$scope->view['saved'] ) {
+                  echo '<center style="color:red;">Customer Not Added</center>';
              
+             }
              if ( isset($scope->view['deleted']) && $scope->view['deleted'] ) {
                   echo '<center style="color:red;">Customer Deleted</center>';
              }
@@ -49,9 +52,13 @@ and open the template in the editor.
         <form action="#" method="post" id="customer_form">
             <label>Customer Name:</label> 
             <input type="text" name="customername" value="<?php echo $customerName; ?>" placeholder="" />
+            <br /><br />
             <label>Description:</label> 
             <input type="text" name="description" value="<?php echo $description; ?>" placeholder="" />
+            <br /><br />
+            <label>Active:</label>
             <input type="number" max="1" min="0" name="Active" value="<?php echo $active; ?>" />
+            <br /><br />
             <input type="hidden" name="action" value="create" />
             <input type="submit" value="Submit" />
         </form>
@@ -70,11 +77,13 @@ and open the template in the editor.
         } else {
             
             
-             echo '<table border="1" cellpadding="5"><tr><th>Customer Name</th><th>Active</th><th></th><th></th></tr>';
+             echo '<table border="1" cellpadding="5"><tr><th>Customer Name</th><th>Desctiption</th><th>Active</th><th></th><th></th></tr>';
              foreach ($scope->view['Customers'] as $value) {
                 echo '<tr>';
                 echo '<td>', $value->getCustomerName(),'</td>';
+                 echo '<td>', $value->getDescription(),'</td>';
                 echo '<td>', ( $value->getActive() == 1 ? 'Yes' : 'No') ,'</td>';
+                
                 echo '<td><form action="#" method="post"><input type="hidden"  name="customerid" value="',$value->getCustomerID(),'" /><input type="hidden" name="action" value="edit" /><input type="submit" value="EDIT" /> </form></td>';
                 echo '<td><form action="#" method="post"><input type="hidden"  name="customerid" value="',$value->getCustomerID(),'" /><input type="hidden" name="action" value="delete" /><input type="submit" value="DELETE" /> </form></td>';
                 echo '</tr>' ;
