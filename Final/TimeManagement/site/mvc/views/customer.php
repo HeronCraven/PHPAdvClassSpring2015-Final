@@ -14,7 +14,7 @@ and open the template in the editor.
     </head>
     <body>
         <div id="page">
-            <div id="header"><h1>Customer Page</h1></div>
+            <div id="header"><h1>Project Manager</h1></div>
         <div id="main">
         <a href="index">Home</a>
         <?php
