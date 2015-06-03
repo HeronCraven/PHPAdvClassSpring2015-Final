@@ -31,7 +31,7 @@
             $customerid = $scope->view['model']->getcustomerid();
         ?>
         
-        <h3>Add Project</h3>
+        <h3>Edit Project</h3>
         <form action="#" method="post">
             <label>Project:</label>            
             <input type="text" name="projectname" value="<?php echo $projectname; ?>" placeholder="" />
