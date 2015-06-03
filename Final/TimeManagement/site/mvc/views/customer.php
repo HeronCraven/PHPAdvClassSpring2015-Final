@@ -45,7 +45,7 @@ and open the template in the editor.
         ?>
         
         
-         <h3>Add Customer</h3>
+         <h1>Add Customer</h1>
         <form action="#" method="post" id="customer_form">
             <label>Customer Name:</label> 
             <input type="text" name="customername" value="<?php echo $customerName; ?>" placeholder="" />

@@ -40,7 +40,7 @@
             
         ?>
         
-        <h3>Add Project</h3>
+        <h1>Add Project</h1>
         <form action="#" method="post">
             <label>Project Name:</label>            
             <input type="text" name="projectName" value="<?php echo $projectName; ?>" placeholder="" />
