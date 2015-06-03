@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="page">
-            <div id="header"><h1>Customer Page</h1></div>
+            <div id="header"><h1>Project Manager</h1></div>
         <div id="main">
         <a href="index">Home</a>
         <?php
@@ -24,7 +24,9 @@
              if ( isset($scope->view['saved']) && $scope->view['saved'] ) {
                   echo '<center style="color:green;">Project Added</center>';
              }
-             
+             if ( isset($scope->view['saved']) && !$scope->view['saved'] ) {
+                  echo '<center style="color:red;">Project Not Added</center>';
+             }
              if ( isset($scope->view['deleted']) && $scope->view['deleted'] ) {
                   echo '<center style="color:red;">Project Deleted</center>';
              }
@@ -40,7 +42,7 @@
             
         ?>
         
-        <h3>Add Project</h3>
+        <h1>Add Project</h1>
         <form action="#" method="post">
             <label>Project Name:</label>            
             <input type="text" name="projectName" value="<?php echo $projectName; ?>" placeholder="" />

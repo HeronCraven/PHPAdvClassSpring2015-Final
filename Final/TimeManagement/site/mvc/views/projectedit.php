@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="page">
-            <div id="header"><h1>Customer Page</h1></div>
+            <div id="header"><h1>Project Manager</h1></div>
         <div id="main">
         <a href="index">Home</a>
         <?php
@@ -31,7 +31,7 @@
             $customerid = $scope->view['model']->getcustomerid();
         ?>
         
-        <h3>Add Project</h3>
+        <h1>Edit Project</h1>
         <form action="#" method="post">
             <label>Project:</label>            
             <input type="text" name="projectname" value="<?php echo $projectname; ?>" placeholder="" />
