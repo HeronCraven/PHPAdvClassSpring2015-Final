@@ -19,7 +19,7 @@ and open the template in the editor.
         <a href="index">Home</a>
         <?php
         // put your code here
-       
+
          if ( $scope->util->isPostRequest() ) {
              
              

@@ -9,6 +9,15 @@
         
         <h1>Test</h1>
         <?php
+        
+            if ( !$scope->util->isLoggedin() ) {
+                // redirect to login page
+                echo '<h2>Not logged in</h2>';
+            } else {
+                var_dump($scope->util->isLoggedin());
+                echo '<h2>Logged in</h2>';
+            }
+        
             if ( isset($scope->view['email']) ) {
                 echo $scope->view['email'];
             }

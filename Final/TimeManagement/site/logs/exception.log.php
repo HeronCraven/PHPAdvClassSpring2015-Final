@@ -695,3 +695,5 @@
 [556e301542edd]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
 
 [556e301751471]	[exception]	[06-03-2015 12:37am]	SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+[556e460771d74]	[exception]	[06-03-2015 2:10am]	Controller for page "logout" failed

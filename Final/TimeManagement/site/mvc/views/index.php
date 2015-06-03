@@ -34,14 +34,20 @@
         
         <br /><br />
         
+        <a href="test">Test</a>
+        
+        <br /><br />
         <a href="login">Login</a>
+
+        <p><a href="?logout">Logout</a></p>
         </div>
         
         <div id="footer">
             <center>
                 <h3>
                 Jarrod Craven <br /><br />
-                Korey Heron <br />
+                Korey Heron <br /><br />
+                
                 </h3>
             </center>
         </div>

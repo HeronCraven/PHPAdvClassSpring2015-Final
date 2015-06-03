@@ -24,7 +24,7 @@
                 if ( isset($scope->view['login']) && $scope->view['login'] ) {
                      echo 'Login Complete';
                      $scope->util->setLoggedin(true);
-                     $scope->util->redirect('index.php');
+                     $scope->util->redirect('index');
                 } else {
                     echo 'Login Failed';
                 } 
